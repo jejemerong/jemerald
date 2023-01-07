@@ -1,17 +1,41 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+// starting point
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
-          child: Container(width: 50, height: 50, color: Colors.lightBlue)),
+      home: Scaffold(
+          backgroundColor: Colors.redAccent,
+          body: Column(
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Hey, Jemerald',
+                        style: TextStyle(
+                          color: Colors.white60,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40,
+                        ),
+                      ),
+                      Text('Good Night~!'),
+                    ],
+                  )
+                ],
+              )
+            ],
+          )),
     );
   }
 }
