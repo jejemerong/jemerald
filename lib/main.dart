@@ -7,35 +7,17 @@ void main() {
 // starting point
 class App extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.redAccent,
-          body: Column(
-            children: [
-              SizedBox(
-                height: 80,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Hey, Jemerald',
-                        style: TextStyle(
-                          color: Colors.white60,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
-                      ),
-                      Text('Good Night~!'),
-                    ],
-                  )
-                ],
-              )
-            ],
-          )),
-    );
+        backgroundColor: Color(0xFF181818),
+        body: Padding(padding: EdgeInsets.symmetric(horizontal: 40,),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 80,)
+        ],))
+      ),
+    )
   }
 }
