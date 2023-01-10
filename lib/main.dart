@@ -4,6 +4,23 @@ void main() {
   runApp(App());
 }
 
+// TODO: 챌린지 컨테이너 재사용하기!!!
+class ChallengeContainer {
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text('운동'),
+        SizedBox(
+          width: 70,
+        ),
+        Text(
+          '스쿼트',
+        )
+      ],
+    );
+  }
+}
+
 // starting point
 class App extends StatelessWidget {
   @override
@@ -65,7 +82,7 @@ class App extends StatelessWidget {
                           children: [
                             Text('일기 쓰기'),
                             SizedBox(
-                              width: 70,
+                              width: 50,
                             ),
                             Text('소소노트 완료!'),
                           ],
