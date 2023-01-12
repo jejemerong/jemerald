@@ -68,6 +68,16 @@ class App extends StatelessWidget {
                               width: 70,
                             ),
                             Text('스쿼트'),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(4)),
+                            )
                           ],
                         ),
                         Row(
