@@ -25,6 +25,7 @@ class ChallengeContainer {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final String now = new DateTime.now().toString();
     return MaterialApp(
       home: Scaffold(
           backgroundColor: Color.fromARGB(255, 255, 217, 217),
@@ -44,10 +45,10 @@ class App extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('23.01.10',
+                        Text('$now',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 45,
+                                fontSize: 35,
                                 fontWeight: FontWeight.w500)),
                       ],
                     )
