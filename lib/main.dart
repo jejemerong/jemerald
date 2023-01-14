@@ -21,6 +21,17 @@ class ChallengeContainer {
   }
 }
 
+class CheckBox {
+  Widget build(BuildContext context) {
+    return Container(
+      height: 20,
+      width: 20,
+      decoration: BoxDecoration(
+          color: Colors.black, borderRadius: BorderRadius.circular(4)),
+    );
+  }
+}
+
 // starting point
 class App extends StatelessWidget {
   @override
@@ -47,9 +58,10 @@ class App extends StatelessWidget {
                       children: [
                         Text('$now',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 35,
-                                fontWeight: FontWeight.w500)),
+                              color: Colors.white,
+                              fontSize: 35,
+                              fontWeight: FontWeight.w500,
+                            )),
                       ],
                     )
                   ],
@@ -71,13 +83,7 @@ class App extends StatelessWidget {
                             SizedBox(
                               width: 10,
                             ),
-                            Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(4)),
-                            )
+                            CheckBox,
                           ],
                         ),
                         Row(
