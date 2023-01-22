@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,16 +24,16 @@ class ChallengeContainer {
   }
 }
 
-class CheckBox {
-  Widget build(BuildContext context) {
-    return Container(
-      height: 20,
-      width: 20,
-      decoration: BoxDecoration(
-          color: Colors.black, borderRadius: BorderRadius.circular(4)),
-    );
-  }
-}
+// class CheckBox {
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 20,
+//       width: 20,
+//       decoration: BoxDecoration(
+//           color: Colors.black, borderRadius: BorderRadius.circular(4)),
+//     );
+//   }
+// }
 
 // starting point
 class App extends StatelessWidget {
@@ -83,7 +86,16 @@ class App extends StatelessWidget {
                             SizedBox(
                               width: 10,
                             ),
-                            CheckBox,
+                            // TODO: 재사용 위젯으로 만들기!
+
+                            Checkbox(),
+                            // Container(
+                            //   height: 20,
+                            //   width: 20,
+                            //   decoration: BoxDecoration(
+                            //       color: Colors.black,
+                            //       borderRadius: BorderRadius.circular(4)),
+                            // )
                           ],
                         ),
                         Row(
