@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(App());
@@ -34,7 +35,8 @@ class ChallengeContainer {
 
 // starting point
 class App extends StatelessWidget {
-  final String now = new DateTime.now().toString();
+  final now = new DateTime.now();
+  String formattedDate = DateFormat('yy.MM.dd').format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,10 +58,10 @@ class App extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text('$now',
+                        Text('$formattedDate',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 40,
                               fontWeight: FontWeight.w500,
                             )),
                       ],
