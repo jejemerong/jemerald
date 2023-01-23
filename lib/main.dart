@@ -1,6 +1,3 @@
-import 'dart:ffi';
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,9 +34,9 @@ class ChallengeContainer {
 
 // starting point
 class App extends StatelessWidget {
+  final String now = new DateTime.now().toString();
   @override
   Widget build(BuildContext context) {
-    final String now = new DateTime.now().toString();
     return MaterialApp(
       home: Scaffold(
           backgroundColor: Color.fromARGB(255, 255, 217, 217),
@@ -62,7 +59,7 @@ class App extends StatelessWidget {
                         Text('$now',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 35,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500,
                             )),
                       ],
@@ -87,15 +84,14 @@ class App extends StatelessWidget {
                               width: 10,
                             ),
                             // TODO: 재사용 위젯으로 만들기!
-
-                            Checkbox(),
-                            // Container(
-                            //   height: 20,
-                            //   width: 20,
-                            //   decoration: BoxDecoration(
-                            //       color: Colors.black,
-                            //       borderRadius: BorderRadius.circular(4)),
-                            // )
+                            // Checkbox(),
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(4)),
+                            )
                           ],
                         ),
                         Row(
