@@ -3,8 +3,6 @@ import 'package:intl/intl.dart';
 import '../utils/colors.dart';
 import '../widgets/fieldBox.dart';
 
-final challengeArr = ['운동', '독서', '일기', '명상'];
-
 class App extends StatelessWidget {
   DateTime now = new DateTime.now();
   String formattedDate = DateFormat('yy.MM.dd').format(DateTime.now());
@@ -40,7 +38,7 @@ class App extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    width: 13,
+                    width: 11,
                   ),
                   Image(
                     image: AssetImage('assets/images/logo_image.png'),
@@ -62,48 +60,48 @@ class App extends StatelessWidget {
               ),
 
               // TODO: 리스트 뷰 사용하기
-              // Column(
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     children: [
-              //       FieldBox(),
-              //       SizedBox(
-              //         height: 20,
-              //       ),
-              //       FieldBox(),
-              //       SizedBox(
-              //         height: 20,
-              //       ),
-              //       FieldBox(),
-              //       SizedBox(
-              //         height: 20,
-              //       ),
-              //       FieldBox(),
-              //     ],
-              //   ),
-
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ListView.builder(
-                    itemCount: 4,
-                    itemBuilder: ((context, index) {
-                      return Column(
-                        children: [
-                          FieldBox(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          FieldBox(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          FieldBox(),
-                        ],
-                      );
-                    }),
+                  FieldBox(),
+                  SizedBox(
+                    height: 20,
                   ),
+                  FieldBox(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  FieldBox(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  FieldBox(),
                 ],
-              )
+              ),
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     ListView.builder(
+              //       itemCount: 4,
+              //       itemBuilder: ((context, index) {
+              //         return Column(
+              //           children: [
+              //             FieldBox(),
+              //             SizedBox(
+              //               height: 10,
+              //             ),
+              //             FieldBox(),
+              //             SizedBox(
+              //               height: 10,
+              //             ),
+              //             FieldBox(),
+              //           ],
+              //         );
+              //       }),
+              //     ),
+              //   ],
+              // )
             ],
           ),
         ),
