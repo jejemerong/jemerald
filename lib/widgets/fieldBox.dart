@@ -3,85 +3,63 @@ import 'package:flutter/material.dart';
 import 'package:jemerald/pages/home.dart';
 import '../utils/colors.dart';
 
+final challenges = ['운동', '독서', '일기', '영어'];
+
 class FieldBox extends StatefulWidget {
+  const FieldBox({Key? key}) : super(key: key);
   @override
-  _FieldBoxUpState createState() => _FieldBoxUpState();
+  _FieldBoxState createState() => _FieldBoxState();
 }
 
-class _FieldBoxUpState extends State<FieldBox> {
+class _FieldBoxState extends State<FieldBox> {
+  final List<String> items =
+      List.generate(challenges.length, (index) => challenges[index]);
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250,
-      height: 90,
-      child: Center(child: Text()),
-      decoration: BoxDecoration(
-        color: ColorStyles.snowWhite,
-        borderRadius: BorderRadius.all(Radius.circular(
-          23.0,
-        )),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromRGBO(214, 216, 216, 100),
-            offset: Offset(
-              7,
-              7,
-            ),
-            blurRadius: 13,
-          ),
-          BoxShadow(
-            color: ColorStyles.white,
-            offset: Offset(
-              -7,
-              -7,
-            ),
-            blurRadius: 13,
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class _FieldBoxDownState extends State<FieldBox> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 250,
-      height: 90,
-      // child: Center(child: Text()),
-      decoration: BoxDecoration(
-        color: ColorStyles.snowWhite,
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Color.fromRGBO(230, 212, 212, 100),
-            Color.fromRGBO(255, 251, 251, 100),
-          ],
-        ),
-        borderRadius: BorderRadius.all(Radius.circular(
-          23.0,
-        )),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromRGBO(217, 200, 200, 100),
-            offset: Offset(
-              -23,
-              -23,
-            ),
-            blurRadius: 45,
-          ),
-          BoxShadow(
-            color: ColorStyles.white,
-            offset: Offset(
-              -23,
-              -23,
-            ),
-            blurRadius: 45,
-          )
-        ],
-      ),
+      // TODO: height 는 ListView 에 포함된 children height 를 모두 포함하는 길이로 설정하도록
+      height: 600,
+      child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (BuildContext context, index) {
+            return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 250,
+                    height: 90,
+                    child: Center(child: Text(challenges[index])),
+                    decoration: BoxDecoration(
+                      color: ColorStyles.snowWhite,
+                      borderRadius: BorderRadius.all(Radius.circular(
+                        23.0,
+                      )),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(214, 216, 216, 100),
+                          offset: Offset(
+                            7,
+                            7,
+                          ),
+                          blurRadius: 13,
+                        ),
+                        BoxShadow(
+                          color: ColorStyles.white,
+                          offset: Offset(
+                            -7,
+                            -7,
+                          ),
+                          blurRadius: 13,
+                        )
+                      ],
+                    ),
+                  ),
+                  // TODO: sizedBox 는 처음에 포함되지 않게
+                  SizedBox(
+                    height: 30,
+                  )
+                ]);
+          }),
     );
   }
 }
