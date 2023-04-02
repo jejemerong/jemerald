@@ -55,53 +55,7 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                height: 80,
-              ),
-
-              // TODO: 리스트 뷰 사용하기
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FieldBox(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  FieldBox(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  FieldBox(),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  FieldBox(),
-                ],
-              ),
-
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     ListView.builder(
-              //       itemCount: 4,
-              //       itemBuilder: ((context, index) {
-              //         return Column(
-              //           children: [
-              //             FieldBox(),
-              //             SizedBox(
-              //               height: 10,
-              //             ),
-              //             FieldBox(),
-              //             SizedBox(
-              //               height: 10,
-              //             ),
-              //             FieldBox(),
-              //           ],
-              //         );
-              //       }),
-              //     ),
-              //   ],
-              // )
+              FieldBox(),
             ],
           ),
         ),
