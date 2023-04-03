@@ -1,12 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jemerald/pages/home.dart';
+import 'package:jemerald/widgets/challengeItem.dart';
 import '../utils/colors.dart';
 
 final challenges = ['운동', '독서', '일기', '영어'];
 
 class FieldBox extends StatefulWidget {
-  const FieldBox({Key? key}) : super(key: key);
+  const FieldBox({required challenges});
   @override
   _FieldBoxState createState() => _FieldBoxState();
 }
@@ -22,43 +23,7 @@ class _FieldBoxState extends State<FieldBox> {
       child: ListView.builder(
           itemCount: items.length,
           itemBuilder: (BuildContext context, index) {
-            return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 250,
-                    height: 90,
-                    child: Center(child: Text(challenges[index])),
-                    decoration: BoxDecoration(
-                      color: ColorStyles.snowWhite,
-                      borderRadius: BorderRadius.all(Radius.circular(
-                        23.0,
-                      )),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromRGBO(214, 216, 216, 100),
-                          offset: Offset(
-                            7,
-                            7,
-                          ),
-                          blurRadius: 13,
-                        ),
-                        BoxShadow(
-                          color: ColorStyles.white,
-                          offset: Offset(
-                            -7,
-                            -7,
-                          ),
-                          blurRadius: 13,
-                        )
-                      ],
-                    ),
-                  ),
-                  // TODO: sizedBox 는 처음에 포함되지 않게
-                  SizedBox(
-                    height: 30,
-                  )
-                ]);
+            return ChallengeItem(challenges: items[index]);
           }),
     );
   }
