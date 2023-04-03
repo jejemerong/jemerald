@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:jemerald/widgets/header.dart';
 import '../utils/colors.dart';
 import '../widgets/fieldBox.dart';
 
-class App extends StatelessWidget {
-  DateTime now = new DateTime.now();
-  String formattedDate = DateFormat('yy.MM.dd').format(DateTime.now());
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,40 +20,61 @@ class App extends StatelessWidget {
               SizedBox(
                 height: 80,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('$formattedDate',
-                          style: TextStyle(
-                            color: ColorStyles.black,
-                            fontFamily: 'Cute_KR',
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600,
-                          )),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 11,
-                  ),
-                  Image(
-                    image: AssetImage('assets/images/logo_image.png'),
-                    width: 50,
-                    height: 50,
-                  ),
-                  SizedBox(
-                    width: 13,
-                  ),
-                  Image(
-                    image: AssetImage('assets/images/logo_text.png'),
-                    width: 115,
-                    height: 55,
-                  )
-                ],
+              Header(),
+              // ElevatedButton(
+              //   onPressed: () ,
+              //   child: const Text('Go'),
+              //   // child: const Text('Go'),
+              // ),
+              FieldBox(
+                onPress: () {
+                  Navigator.of(context).push(_createRoute());
+                },
               ),
-              FieldBox(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      });
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: ColorStyles.babyPurple,
+        body: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 40,
+            vertical: 20,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 80,
+              ),
             ],
           ),
         ),
