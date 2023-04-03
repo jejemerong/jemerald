@@ -62,6 +62,10 @@ flutter:
   assets:
     - assets/images/logo_text.png
     - assets/images/logo_image.png
+    - assets/images/before운동.png
+    - assets/images/before독서.png
+    - assets/images/before일기.png
+    - assets/images/before영어.png
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
