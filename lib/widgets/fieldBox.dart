@@ -7,7 +7,7 @@ import '../utils/colors.dart';
 final challenges = ['운동', '독서', '일기', '영어'];
 
 class FieldBox extends StatefulWidget {
-  const FieldBox({required challenges});
+  FieldBox({required Function onPress});
   @override
   _FieldBoxState createState() => _FieldBoxState();
 }
