@@ -23,7 +23,8 @@ class _FieldBoxState extends State<FieldBox> {
       child: ListView.builder(
           itemCount: items.length,
           itemBuilder: (BuildContext context, index) {
-            return ChallengeItem(challenges: items[index]);
+            return ChallengeItem(
+                challengeName: items[index], isFinished: false);
           }),
     );
   }
