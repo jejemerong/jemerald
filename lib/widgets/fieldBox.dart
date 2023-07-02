@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jemerald/pages/home.dart';
 import 'package:jemerald/widgets/challengeItem.dart';
-import '../utils/colors.dart';
+import '../constants/colors.dart';
 
 final challenges = ['운동', '독서', '일기', '영어'];
 

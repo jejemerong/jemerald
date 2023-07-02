@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jemerald/utils/colors.dart';
+import 'package:jemerald/constants/colors.dart';
 
 class ChallengeItem extends StatefulWidget {
   final String challengeName;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../utils/colors.dart';
+import '../constants/colors.dart';
 
 class Header extends StatelessWidget {
   DateTime now = new DateTime.now();
