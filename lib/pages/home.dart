@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jemerald/widgets/header.dart';
-import '../utils/colors.dart';
+import '../constants/colors.dart';
 import '../widgets/fieldBox.dart';
 
 class Home extends StatelessWidget {
